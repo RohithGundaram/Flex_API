@@ -1,0 +1,108 @@
+Hosted API Link:
+https://flex-api-rohiths-projects-b8dbb91a.vercel.app/api
+
+Routes:
+
+/api/accidents
+
+    Method : POST
+    Headers: Content-Type : "application/json"
+    Body   :{
+                "latitude"  : "78.326xx80",
+                "longitude" : "12.365xx35",
+                "MacAddress": "145236xx4566"
+            }
+    Response: {
+                "message" : "Accident occured"
+              }
+
+    -----------------------------------------------
+    Method : GET
+    Response : List of all accidents in the Accident Table
+    {
+        latitude,
+        longitude,
+        MacAddress
+    }
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/api/user
+
+    Method : PUT
+    Body   : {
+                "email" : "jondoe@gmail.com"
+             }
+    Response:   {
+                    "_id": "66129944475a72ef37b7517a",
+                    "email": "jondoe@gmail.com",
+                    "phone": "9632587412",
+                    "MacAddress": "145236974566",
+                    "emergencyContact": "ragulganesh@gmail.com",
+                    "deviceToken": "",
+                    "createdAt": "2024-04-07T13:01:56.727Z",
+                    "updatedAt": "2024-04-07T13:01:56.727Z",
+                    "__v": 0
+                }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+/api/user/register
+
+    Method : POST
+    Headers: Content-Type : "application/json"
+    Body   :{
+                "email":"jondoe@gmail.com",
+                "phone":"963258xx12",
+                "MacAddress":"145236974566",
+                "emergencyContact":"",
+                "deviceToken":""
+            }
+    Response: {
+                "message" : "User registered"
+              }
+    ------------------------------------------------
+
+    Method : GET
+    Response: List of all registered users in the Users Table
+    {
+        "res": [
+            {
+                "_id": "66128ed55c4a896608441da4",
+                "email": "rogithgundaram@gmail.com",
+                "phone": "8524584258",
+                "MacAddress": "My mac addr",
+                "emergencyContact": "7896541236",
+                "deviceToken": "weiqokdajfskhvbdjafkvbdjskhvbdjks",
+                "createdAt": "2024-04-07T12:17:25.273Z",
+                "updatedAt": "2024-04-07T12:17:25.273Z",
+                "__v": 0
+            },
+            {
+                "_id": "66128f045c4a896608441da6",
+                "email": "hemareddy@gmail.com",
+                "phone": "6969696969",
+                "MacAddress": "new helmet",
+                "emergencyContact": "6969694556",
+                "deviceToken": "weqwrgdbfhngjhmkjlk",
+                "createdAt": "2024-04-07T12:18:12.136Z",
+                "updatedAt": "2024-04-07T12:39:36.594Z",
+                "__v": 0
+            }
+        ]
+    }
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/api/user/update
+
+    Method : PUT
+    Body   :{
+                "email": "ragulganesh@gmail.com",
+                "deviceToken":"cWKKBrhRQT6TFV7dzD512l:APA91bFkhXypGQ6WUM-dp7tC9wIFK8Y9S6erS0ux4dnQcITJ-0ypQ0Thq3T3sNNZADLtTMXIrKeN_GJYG4ksRbB-khL-PBHjVKhxRHj3WTNk8EPE-eANDOToN2vsjRl1MC7hMYwFgRmt"
+            }
+    Response: {
+                message : "User details updated
+              }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
