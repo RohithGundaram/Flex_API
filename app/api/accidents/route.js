@@ -25,7 +25,7 @@ export async function POST(request){
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
-            "Authorization" : "key=AAAAHvVhYzE:APA91bEAY_L6B03MsQULZbi08oeLkfiBuE1QPm-yON_ZStjHli8bpR_G5oAB4oskS4bxsMlruprajw4jUHJsWz7jwzNFCuVuUo_Ht3Klkjk6p_GI003aQ_KR3ACgrD37tw69NX1XR99o",
+            "Authorization" : process.env.FCM_TOKEN,
         },
         body: JSON.stringify(notificationData),
     })
