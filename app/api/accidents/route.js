@@ -31,6 +31,7 @@ export async function POST(request){
     })
         .then((response)=> response.json())
         .then((responseData)=>{
+            console.log("Sent notification");
             console.log(JSON.stringify(responseData));
         })
     return NextResponse.json({message: "Accident occured"},{status:201})
