@@ -25,7 +25,7 @@ export async function POST(request){
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
-            "Authorization" : process.env.FCM_TOKEN,
+            "Authorization" : String(process.env.FCM_TOKEN),
         },
         body: JSON.stringify(notificationData),
     })
