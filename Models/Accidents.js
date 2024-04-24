@@ -4,7 +4,10 @@ const accidentSchema=new Schema(
     {
         latitude:String,
         longitude:String,
-        MacAddress:String   //email
+        MacAddress:String,
+        email:String,
+        phone:String,
+        emergencyContact:String//email
     },
     {
         timestamps:true
