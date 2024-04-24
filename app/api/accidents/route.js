@@ -11,7 +11,7 @@ export async function POST(request){
     console.log(riderDetails);
     const emergencyContact = riderDetails.emergencyContact
     const phone=riderDetails.phone
-    const email=riderDetais.email
+    const email=riderDetails.email
     
     await Accidents.create({latitude,longitude,MacAddress,email,phone,emergencyContact})
     const token = await Users.findOne({email: emergencyContact})
