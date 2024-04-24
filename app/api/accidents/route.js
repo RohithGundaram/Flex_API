@@ -6,11 +6,15 @@ import { NextResponse } from "next/server"
 export async function POST(request){
     const {latitude,longitude,MacAddress}=await request.json()
     await connectMongo()
-    await Accidents.create({latitude,longitude,MacAddress})
+    
     const riderDetails = await Users.findOne({MacAddress})
     console.log(riderDetails);
-    const emergContact = riderDetails.emergencyContact
-    const token = await Users.findOne({email: emergContact})
+    const emergencyContact = riderDetails.emergencyContact
+    const phone=riderDetails.phone
+    const email=riderDetais.email
+    
+    await Accidents.create({latitude,longitude,MacAddress,email,phone,emergencyContact})
+    const token = await Users.findOne({email: emergencyContact})
     console.log(token);
     const notificationData = {
         "to": token.deviceToken,
