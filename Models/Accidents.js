@@ -14,6 +14,6 @@ const accidentSchema=new Schema(
     }
 )
 
-const Accidents=mongoose.models.Accidents||mongoose.model("Accidents",accidentSchema)
+const Accidents=mongoose.model("Accidents",accidentSchema)
 
 export default Accidents
