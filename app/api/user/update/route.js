@@ -4,11 +4,21 @@ import { NextResponse } from "next/server"
 
 
 export async function PUT(request){
-    const {email,phone,MacAddress,emergencyContact,deviceToken}=await request.json()
+    const {email,emergencyContact}=await request.json()
     await connectMongo()
 
     await Users.findOneAndUpdate({email: email},{
-        phone,MacAddress,emergencyContact,deviceToken
+        emergencyContact
+    })
+    return NextResponse.json({message:"User details updated"},{status:201})
+}
+
+export async function POST(request){
+    const {email,MacAddress}=await request.json()
+    await connectMongo()
+
+    await Users.findOneAndUpdate({email: email},{
+        MacAddress
     })
     return NextResponse.json({message:"User details updated"},{status:201})
 }
