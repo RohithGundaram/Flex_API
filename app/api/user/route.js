@@ -8,10 +8,13 @@ export async function PUT(request){
     await connectMongo()
 
     const userDetails = await Users.findOne({email: email})
-    delete userDetails._id
-    delete userDetails.password
-    delete userDetails.createdAt
-    delete userDetails.updatedAt
-    return NextResponse.json(userDetails,{status:201})
+    const Details={
+        email:userDetails.email,
+        phone:userDetails.phone,
+        MacAddress:userDetails.MacAddress,
+        emergencyContact:userDetails.emergencyContact,
+        deviceToken:userDetails.deviceToken
+    }
+    return NextResponse.json(Details,{status:201})
 }
 
