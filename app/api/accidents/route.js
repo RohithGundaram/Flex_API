@@ -46,7 +46,7 @@ export async function POST(request){
 
 export async function GET(){
     await connectMongo()
-    const res=await Accidents.find()
+    const res=await Accidents.find().sort({ createdAt: -1 })
     return NextResponse.json({res})
     
 }
