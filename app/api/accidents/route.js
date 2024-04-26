@@ -33,11 +33,15 @@ export async function POST(request){
 "Content-Type": "application/json",
 "Authorization": "key=AAAA8JOEjn8:APA91bFfMpQX6azYe1HXRG2T1HcZ9F14LwViinP4UR029CJs4boF3ImAcTY4EycHowhcWSCqIBOXdk6MKoNvnC4EaFY9pSQ-Mw3nwqsuyrvo0h0_1C0H0auYYP6TCYgvmxXg53hE9cPV"
 
-        }
+        },
+        body:JSON.stringify(notificationData)
+        
     })
 
+    const ress=result.json()
+
      
-    return NextResponse.json({message: "Accident occured",result},{status:201})
+    return NextResponse.json({message: "Accident occured",ress},{status:201})
 }
 
 export async function GET(){
