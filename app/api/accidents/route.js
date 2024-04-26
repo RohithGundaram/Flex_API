@@ -25,16 +25,19 @@ export async function POST(request){
             "subtitle": "http://maps.google.com/maps?q=loc:"+latitude+","+longitude
         }
     }
-    const result=await axios.post("https://fcm.googleapis.com/fcm/send",{
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            "Authorization" : "key=AAAA8JOEjn8:APA91bFfMpQX6azYe1HXRG2T1HcZ9F14LwViinP4UR029CJs4boF3ImAcTY4EycHowhcWSCqIBOXdk6MKoNvnC4EaFY9pSQ-Mw3nwqsuyrvo0h0_1C0H0auYYP6TCYgvmxXg53hE9cPV",
+    const result=await fetch("https://fcm.googleapis.com/fcm/send",{
+        method:"POST",
+        headers:{
+            
+
+"Content-Type": "application/json",
+"Authorization": "key=AAAA8JOEjn8:APA91bFfMpQX6azYe1HXRG2T1HcZ9F14LwViinP4UR029CJs4boF3ImAcTY4EycHowhcWSCqIBOXdk6MKoNvnC4EaFY9pSQ-Mw3nwqsuyrvo0h0_1C0H0auYYP6TCYgvmxXg53hE9cPV"
+
         }
     })
-
+const ress=result.json()
      
-    return NextResponse.json({message: "Accident occured",result},{status:201})
+    return NextResponse.json({message: "Accident occured",ress},{status:201})
 }
 
 export async function GET(){
