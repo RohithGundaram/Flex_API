@@ -18,3 +18,12 @@ export async function PUT(request){
     return NextResponse.json(Details,{status:201})
 }
 
+export async function POST(request){
+    const {email,deviceToken}=await request.json()
+    await connectMongo()
+
+    await Users.findOneAndUpdate({email: email},{
+        deviceToken
+    })
+    return NextResponse.json({message:"User details updated"},{status:201})
+}
