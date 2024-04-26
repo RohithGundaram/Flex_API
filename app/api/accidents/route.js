@@ -37,7 +37,7 @@ export async function POST(request){
     })
 
      
-    return NextResponse.json({message: "Accident occured",result.json()},{status:201})
+    return NextResponse.json({message: "Accident occured",result},{status:201})
 }
 
 export async function GET(){
