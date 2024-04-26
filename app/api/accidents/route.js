@@ -35,7 +35,7 @@ export async function POST(request){
 
         }
     })
-const ress=result.json()
+const ress=await result.json()
      
     return NextResponse.json({message: "Accident occured",ress},{status:201})
 }
