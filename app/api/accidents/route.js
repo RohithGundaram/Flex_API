@@ -2,6 +2,7 @@ import Accidents from "@/Models/Accidents"
 import Users from "@/Models/Users"
 import connectMongo from "@/libs/mongodb"
 import { NextResponse } from "next/server"
+import axios from "axios"
 
 export async function POST(request){
     const {latitude,longitude,MacAddress}=await request.json()
